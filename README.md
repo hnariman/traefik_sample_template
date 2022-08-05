@@ -39,4 +39,9 @@ test web.server:
 $ curl -XGET http://web.localhost
 ```
 
+## Documentation:
+Official Traefik documentation with examples of docker-compose & configs can be found on:
+[https://doc.traefik.io/traefik/user-guides/docker-compose/basic-example/]
+
+
 ![image](https://user-images.githubusercontent.com/31799546/183222869-db488e81-41a6-4eaa-b6bc-7149c556387d.png)
