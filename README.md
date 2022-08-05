@@ -28,14 +28,13 @@ to stop & remove volumes:
 ```bash
 $ docker-compose down -v
 ```
-After a minute you can check if routing is working
 
-dashboard:
+test dashboard:
 ```bash
 $ curl -XGET http://localhost:8080/dashboard
 ```
 
-web.server:
+test web.server:
 ```bash
 $ curl -XGET http://web.localhost
 ```
