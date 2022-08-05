@@ -36,4 +36,5 @@ services:
       - "traefik.http.routers.whoami.entrypoints=web"
     volumes:
       # html replacement for nginx defaults
-      - ./html/:/usr/share/nginx/html/
+      # - ./html/:/usr/share/nginx/html/
+      - ./client/build/:/usr/share/nginx/html/
