@@ -27,7 +27,7 @@ to ckeck if routing is working
 
 dashboard:
 ```bash
-$ curl -XGET http://localhost:8080
+$ curl -XGET http://localhost:8080/dashboard
 ```
 
 web.server:
