@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+
+  proxy:
+    container_name: traefik_gateway 
+    image: traefik:v2.5 
+    command: 
+      #--api.insecure=true  --providers=docker  --dashboard=true  
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+
+    privileged: true # permission override
+    ports:
+      - "80:80"
+      - "8080:8080" # traefik dashboard on localhost
+
+    volumes:
+      # traefik listens for docker like that
+      - /var/run/docker.sock:/var/run/docker.sock
+        # - ./config/:/etc/traefik # optionally can use config form sample file
+
+  web:
+    image: nginx
+    container_name: nginx_web
+    # ports:
+    #   - "3000:80"
+    # environment:
+    #   - NGINX_PORT=80
+    #   - NGINX_HOST=web.localhost
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`web.localhost`)"
+      - "traefik.http.routers.whoami.entrypoints=web"
+    volumes:
+      # html replacement for nginx defaults
+      - ./html/:/usr/share/nginx/html/
