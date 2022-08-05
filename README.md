@@ -23,7 +23,12 @@ to start:
 ```bash
 $ docker-compose up -d --remove-orphans
 ```
-to ckeck if routing is working
+
+to stop & remove volumes: 
+```bash
+$ docker-compose down -v
+```
+After a minute you can check if routing is working
 
 dashboard:
 ```bash
