@@ -1,4 +1,4 @@
-# Minimalist traefik template that just works on my machine
+# Minimalist Traefik ( just works on my machine )
 
 Traefik is used as load balanceer & API Gateway 
 
