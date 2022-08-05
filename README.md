@@ -46,6 +46,7 @@ https://doc.traefik.io/traefik/user-guides/docker-compose/basic-example/
 
 ## Added client directory 
 a sample create-react-app and linked client/build into nginx
+client will update on each build from client folder (npm run build || yarn build)
 
 
 ![image](https://user-images.githubusercontent.com/31799546/183222869-db488e81-41a6-4eaa-b6bc-7149c556387d.png)
